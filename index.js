@@ -20,6 +20,10 @@ const readFolder = (folder) => new Promise((res, rej) => {
 });
 const read = (fName) => new Promise((res, rej) => {
     fs_1.readFile(path_1.resolve(fName), (err, str) => {
+        //remove BOM
+        if(str[0] === 0xEF && str[1] === 0xBB && str[2] === 0xBF){
+            str = str.slice(3);
+        }
         if (err)
             rej(err);
         res(str);
