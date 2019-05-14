@@ -4,6 +4,10 @@
 
 Concatenate multiple files
 
+## Changes in fork
+
+Remvoing BOM from files.
+
 ## Usage
 
 ```bash
